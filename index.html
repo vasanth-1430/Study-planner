@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">📘</div>
+      <div>
+        <h1>Smart Study Planner</h1>
+        <p class="lead">Organize your study tasks and boost productivity</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Left column (form + stats) -->
+    <section class="card">
+      <h2>Add New Task</h2>
+      <form id="taskForm">
+        <div class="field">
+          <label>Title</label>
+          <input type="text" id="title" required>
+        </div>
+        <div class="field">
+          <label>Subject</label>
+          <input type="text" id="subject" required>
+        </div>
+        <div class="field">
+          <label>Deadline</label>
+          <input type="date" id="deadline" required>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="description"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Task</button>
+      </form>
+
+      <div class="stats">
+        <div class="stat">
+          <strong id="totalTasks">0</strong>
+          <span>Total Tasks</span>
+        </div>
+        <div class="stat">
+          <strong id="completedTasks">0</strong>
+          <span>Completed</span>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress">
+          <i id="progressBar"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right column (tasks view) -->
+    <section>
+      <div class="toolbar">
+        <div class="toggle">
+          <button id="listViewBtn" class="active">List View</button>
+          <button id="timelineViewBtn">Timeline View</button>
+        </div>
+      </div>
+
+      <div id="listView" class="list"></div>
+      <div id="timelineView" class="timeline hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
